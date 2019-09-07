@@ -1,0 +1,16 @@
+# Show page single view users..
+
+<?php include_once('header.php')?>
+<?php include_once('Update/conn.php');?>
+<?php 	
+
+	$id     = $_GET['id'];
+	$query  = "SELECT * FROM `update` WHERE `id` = '$id'";
+	$result = mysqli_query($conn,$query);
+	$pow    = mysqli_fetch_assoc($result);
+?>
+
+	<span>Name  : <?php echo $pow['Name'] . "<br>"?></span>
+	<span>Email : <?php echo $pow['Email'] . "</br>"?></span>
+	<span>Phone : <?php echo $pow['Phone'] . "</br>"?></span>
+<?php include_once('footer.php');?>
