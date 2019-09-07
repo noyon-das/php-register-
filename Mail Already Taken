@@ -1,0 +1,7 @@
+//checking email it already taken..
+		$query = "SELECT User_Email FROM `user_login` WHERE User_Email = '$Email'";
+		$fire  = mysqli_query($conn,$query);
+		if(mysqli_num_rows($fire) > 0){
+			$_SESSION['Exist_mail'] = true;
+			header("Location: registe.php");
+		}
